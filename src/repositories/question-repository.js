@@ -1,0 +1,9 @@
+const { Question } = require("../models/index");
+
+class QuestionRepository extends CrudRepository {
+    constructor() {
+        super(Question);
+    }
+}
+
+module.exports = QuestionRepository;
