@@ -2,6 +2,10 @@ const { StatusCodes } = require("http-status-codes");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET_KEY } = require("../config/server-config");
 const { UserController } = require("../controllers/index");
+const { UserService } = require("../services");
+
+
+const userService = new UserService();
 
 async function isAuthenticated(req, res, next) {
   try {

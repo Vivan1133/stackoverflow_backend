@@ -20,6 +20,15 @@ class UserRepository extends CrudRepository {
             throw error;
         }
     }
+
+    async updateReputation(userId, change) {
+        const user = await User.get(userId);
+        if (user) {
+            user.reputation += change;
+            await user.save();
+        }
+        return user;
+    }
 }
 
 module.exports = UserRepository;
